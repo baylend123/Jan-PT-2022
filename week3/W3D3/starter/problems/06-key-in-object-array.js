@@ -24,16 +24,10 @@ keyInObjectArray(objArray, 'animal'); // => false
 
 
 function keyInObjectArray(objArray, keyString) {
-  for(let i  = 0; i < objArray.length; i++){
-    let myObj = objArray[i]
-      for(let anything in myObj){
-        if(anything === keyString){
-          return true
-        }
-      }
-    // if(keyString in myObj){
-    //   return true
-    // }
+  for(i in objArray){
+    if(keyString in objArray[i]){
+        return true 
+    }
   }
   return false
 }
