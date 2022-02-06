@@ -26,10 +26,44 @@ let peeps = [
 ];
 console.log(countScores(peeps)); //=> { Anthony: 4, Fred: 4, Winnie: 6 }
 ***********************************************************************/
-
+// write a function hat takes an array of objects as a param
+// create a new object 
+// loop through the array of objects
+// create a variabel that is equal to each object in isolation
+// check if the vale of the name key in that object is in my new object
+// if it is not, then create it
+// if it is then += it 
 function countScores(people) {
-  // your code here
+    let myNewObj = {}
+    for(let i = 0; i < people.length; i++){
+      let obj = people[i]
+      // console.log(obj)
+      if(myNewObj[obj.name] === undefined){
+        myNewObj[obj.name] = obj.score
+      }else {
+        myNewObj[obj.name] += obj.score
+      }
+    }
+    return myNewObj
 }
+// Example 1:
+let ppl = [{name: "Anthony", score: 10},
+            {name: "Fred", score : 10},
+            {name: "Anthony", score: -8},
+            {name: "Winnie", score: 12}];
 
+console.log(countScores(ppl)); //=> { Anthony: 2, Fred: 10, Winnie: 12 }
+
+// Example 2:
+let peeps = [
+  {name: "Anthony", score: 2},
+  {name: "Winnie", score: 2},
+  {name: "Fred", score: 2},
+  {name: "Winnie", score: 2},
+  {name: "Fred", score: 2},
+  {name: "Anthony", score: 2},
+  {name: "Winnie", score: 2}
+];
+console.log(countScores(peeps)); //=> { Anthony: 4, Fred: 4, Winnie: 6 }
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = countScores;
