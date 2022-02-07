@@ -25,7 +25,7 @@ console.log(cat); // { name: "Willie", color: "orange", toy: "yarn" }
 // if so i am going to create an entry in my object[passed in key] = passed in value
 // return object 
 function keyAdderUniqueVal(object, key, value) {
-	let myValues = Object.values(object)
+	// let myValues = Object.values(object)
 	// solving using indexof
 	// if(myValues.indexOf(value) === -1){
 	// 	object[key] = value
@@ -40,23 +40,23 @@ function keyAdderUniqueVal(object, key, value) {
 
 
 	// solving using classic array manipulation
-	// let doesExist = false
-	// let myValues = []
-	// for(let key in object){
-	// 	let value = object[key]
-	// 	myValues.push(value)
-	// }
-	// // console.log(myValues)
-	// for(let i = 0; i < myValues.length; i++){
-	// 	let myElement = myValues[i]
-	// 	if(myElement === value){
-	// 		doesExist = true
-	// 	}
-	// }
-	// if(!doesExist){
-	// 	object[key] =value
-	// }
-	// return object
+	let doesExist = false
+	let myValues = []
+	for(let key in object){
+		let value = object[key]
+		myValues.push(value)
+	}
+	// console.log(myValues)
+	for(let i = 0; i < myValues.length; i++){
+		let myElement = myValues[i]
+		if(myElement === value){
+			doesExist = true
+		}
+	}
+	if(!doesExist){
+		object[key] =value
+	}
+	return object
 }
 let cat = { name: 'Willie', color: 'orange' };
 keyAdderUniqueVal(cat, "toy", "yarn"); // => {name: "Willie", color: "orange", toy: "yarn"}

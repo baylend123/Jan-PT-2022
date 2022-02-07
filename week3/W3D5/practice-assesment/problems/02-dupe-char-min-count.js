@@ -39,39 +39,39 @@ function countCharacters(string, letter) {
 	return myNumber
 }
 function duplicateCharMinCount(string, minCount) {
-	// let myResult = []
+	let myResult = []
 	let myObj = {}
 
-	for(let i = 0; i < string.length; i++){
-		let myLetter = string[i]
-		console.log(myLetter, string, 'inside my main function')
-		if(myObj[myLetter] === undefined && countCharacters(string, myLetter) >= minCount){
+	// for(let i = 0; i < string.length; i++){
+	// 	let myLetter = string[i]
+	// 	console.log(myLetter, string, 'inside my main function')
+	// 	if(myObj[myLetter] === undefined && countCharacters(string, myLetter) >= minCount){
 		
-			myObj[myLetter] = countCharacters(string, myLetter)
-		}
-	}
+	// 		myObj[myLetter] = countCharacters(string, myLetter)
+	// 	}
+	// }
 	// return Object.keys()
 
 
 
 	// all in one function solution 
-	// let myStringArray = string.split('')
-	// for(let i = 0; i < myStringArray.length; i++){
-	// 	let myCurrentElement = myStringArray[i]
-	// 	if(!(myCurrentElement in myObj)){
-	// 		myObj[myCurrentElement] = 1
-	// 	}else{
-	// 		myObj[myCurrentElement] ++
-	// 	}
-	// }
-	// console.log(myObj)
-	// for(let key in myObj){
-	// 	let myValue = myObj[key]
-	// 	if(myValue >= minCount){
-	// 		myResult.push(key)
-	// 	}
-	// }
-	// return myResult
+	let myStringArray = string.split('')
+	for(let i = 0; i < myStringArray.length; i++){
+		let myCurrentElement = myStringArray[i]
+		if(!(myCurrentElement in myObj)){
+			myObj[myCurrentElement] = 1
+		}else{
+			myObj[myCurrentElement] ++
+		}
+	}
+	console.log(myObj)
+	for(let key in myObj){
+		let myValue = myObj[key]
+		if(myValue >= minCount){
+			myResult.push(key)
+		}
+	}
+	return myResult
 }
 
 console.log(duplicateCharMinCount("apple", 2)) // ["p"]
