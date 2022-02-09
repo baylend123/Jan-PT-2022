@@ -20,27 +20,18 @@ let result3 = multiMap("hi", 5, function(s) {
 });
 console.log(result3); // hi!!!!!
 *******************************************************************************/
-//  write a function that takes a value a number and a cb
-// create a variable to store my ew value every time
-// creat a for lop that loops n times
-// on each iteration, im going to reassign my variable the that variable passed into the callback 
-// return that value
+// write a function that takes in a value a number and a callback
+// we want to loop, from 0 to the n 
+// call the callback callback on the value inside the loop
+// reassign value to the result of passing value into the cb
+// return the value of running it through the cb n times
 
-let someFunc = function(n) {
-  return n * 10;
-}
-let multiMap = function(value, number, callback) {
-    // let myValue = value 
-    for(let i = 0; i < number; i++){
-      value= callback(value)
+let multiMap = function(value, n, cb) {
+    for(let i = 0; i < n ; i ++){
+      value = cb(value)
     }
-    return value
-};
-
-
-let result1 = multiMap(7, 2, someFunc);
-console.log(result1); // 700
-
+    return value 
+}
 
 
 
