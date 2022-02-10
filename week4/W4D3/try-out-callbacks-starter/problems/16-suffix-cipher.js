@@ -38,6 +38,14 @@ let suffixCipher = function(sent, obj) {
         let word = el
         for(let key in obj){
             if (el.endsWith(key)){
+                // let cipher2 = {
+                //     tal: function(word) {
+                //         return word.toUpperCase();
+                //     },
+                //     s: function(word) {
+                //         return word + 'th';
+                //     }
+                // };
                 word = obj[key](el)
             }
         }

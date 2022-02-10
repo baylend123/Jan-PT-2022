@@ -41,10 +41,5 @@ let one = function(array, cb) {
     return array.filter((ele, i) => cb(ele, i)).length === 1
 };
 
-
-
-
-
-
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
 module.exports = one;
