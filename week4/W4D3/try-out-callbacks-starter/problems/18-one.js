@@ -38,7 +38,7 @@ console.log(result6);   // true
 *******************************************************************************/
 
 let one = function(array, cb) {
-    return array.filter((ele, i)=> cb(ele, i)).length === 1
+    return array.filter((ele, i) => cb(ele, i)).length === 1
 };
 
 
