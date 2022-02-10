@@ -31,9 +31,32 @@ console.log(
 // [ 'art', 'app', 'buttery' ]
 *******************************************************************************/
 
-let xorSelect = function() {
-
+let xorSelect = function(arr, cb1, cb2) {
+    //create new array variable
+    let newArr = []
+    // loop through array using standard for loop
+    for(let i = 0; i < arr.length; i++){
+        let ele = arr[i]
+        // check if first call back or second call back passing in each element is true
+        // and checking if first and second call back passing in each element are not both true
+        if((cb1(ele) || cb2(ele)) && !(cb1(ele) && cb2(ele))){
+            // push current element to new array
+            newArr.push(ele)
+        }
+    }
+    // return new array
+    return newArr
 };
+
+// alternative method using filter with same logic as above
+// filter returns new array where conditional is true
+
+// let xorSelect = function(array, cb1, cb2) {
+//     let selected = array.filter(function(el) {
+//       return (cb1(el) || cb2(el)) && !(cb1(el) && cb2(el));
+//     });
+//     return selected;
+//   };
 
 
 

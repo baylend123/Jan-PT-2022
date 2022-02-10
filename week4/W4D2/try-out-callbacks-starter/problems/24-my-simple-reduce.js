@@ -34,9 +34,13 @@ AFTER YOU ARE FINISHED WITH THIS PROBLEM, ASK FOR A CODE REVIEW
   optional initial accumulator
 *******************************************************************************/
 
-let mySimpleReduce = function() {
-
-};
+function mySimpleReduce(array, cb) {
+    let accumulator = array[0];
+    array.slice(1).forEach(function (el) {
+        accumulator = cb(accumulator, el);
+    });
+    return accumulator;
+}
 
 
 
