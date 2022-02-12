@@ -13,7 +13,20 @@ Least and Most Expensive Toys:
 */
 
 function leastAndMostExpensive(catalog) {
-    
+    let highest = 0;
+    let least = Infinity;
+    let lowKey = ''
+    let highKey = ''
+    for(let key in catalog){
+        if(catalog[key] > highest){
+            highest = catalog[key]
+            highKey = key
+        } else if(catalog[key] < least){
+            least = catalog[key]
+            lowKey = key
+        }
+    }
+    return [lowKey, highKey]
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/

@@ -13,8 +13,7 @@
 
 */
 
-// one-liner:
-// const discountPrices = (prices, discounts) => prices.map((price, i) =>  '$' + (price * (1 - discounts[i])).toFixed(2));
+const discountPrices = (prices, discounts) => prices.map((price, i) =>  '$' + (price * (1 - discounts[i])).toFixed(2));
 
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/

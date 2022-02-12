@@ -10,7 +10,16 @@
 */
 
 function characterCount(string) {
-    
+    let obj = {}
+    for(let i = 0; i<string.length; i++){
+        let ele = string[i]
+        if(!obj[ele]){
+            obj[ele] = 1
+        } else {
+            obj[ele]++
+        }
+    }
+    return obj
 }
 
 

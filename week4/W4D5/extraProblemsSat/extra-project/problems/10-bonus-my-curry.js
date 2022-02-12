@@ -6,7 +6,7 @@
 
     The returned function collects arguments and returns the same function,
     until the number of arguments is equal to the original numArgs value.
-    
+
     See examples below:
     const sumFunc = (...nums) => nums.reduce((acc, el) => acc + el);
     const curriedFunc = myCurry(sumFunc, 4);
@@ -19,6 +19,16 @@
 */
 
 function myCurry(func, numArgs) {
+    let arr = []
+    let _myCurry = (num) => {
+        arr.push(num)
+        if(arr.length === numArgs){
+            return func(...arr)
+        } else {
+           return _myCurry
+        }
+    }
+    return _myCurry
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/

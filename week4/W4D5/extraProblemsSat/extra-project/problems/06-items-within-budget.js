@@ -13,12 +13,22 @@
                         {name: 'omakase bento box', price: 100},
                         {name: 'medicine', price: 50}
                     ]
-    
-    console.log(itemsWithinBudget(1000, items1)) // prints ['iPhone', 'guitar'] 
+
+    console.log(itemsWithinBudget(1000, items1)) // prints ['iPhone', 'guitar']
     console.log(itemsWithinBudget(200, items2)) // prints ['omakase bento box', 'medicine']
 */
 
-
+const itemsWithinBudget = (num, arr) => {
+    let newArr = []
+ arr.forEach(ele => {
+     for(let key in ele){
+         if(ele[key] <= num){
+             newArr.push(ele.name)
+         }
+     }
+ })
+ return newArr
+}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {

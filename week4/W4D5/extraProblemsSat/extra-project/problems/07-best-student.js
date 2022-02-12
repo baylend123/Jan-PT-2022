@@ -1,5 +1,5 @@
 /*
-    
+
     Write a function bestStudent() that takes any number of student objects, each with names for keys, and total points for values.
     The function should return the name of the student with the most points.
     If no students are passed to the function, return null;
@@ -13,9 +13,23 @@
 
     console.log(bestStudent(student1, student2, student3, student4, student5)) // returns "Justin"
 
-    
+
 */
 
+const bestStudent = (...students) => {
+    let highest = 0
+    let highKey = ''
+    for(let i = 0; i < students.length; i++){
+        let ele = students[i]
+        for(let key in ele){
+           if(ele["points"] > highest){
+               highest = ele["points"]
+               highKey = ele['name']
+           }
+        }
+    }
+    return highKey
+}
 
 
 

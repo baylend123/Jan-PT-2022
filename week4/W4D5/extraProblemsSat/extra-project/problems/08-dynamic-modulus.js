@@ -21,8 +21,12 @@
 */
 
 function dynamicModulus(num) {
-   
-}
+    return function(num1){
+        return num1 % num
+    }
+ }
+
+ // const dynamicModulus = num => num1 => num1 % num
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {
@@ -30,4 +34,3 @@ try {
 } catch (e) {
     module.exports = null;
 }
-
