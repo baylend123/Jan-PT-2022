@@ -13,9 +13,25 @@ pickyMyMap(booleans, (boolean) => !boolean); // [true, true]
 
 You may not use Array's `map()`, `filter()`, or `forEach()` methods.
 ***********************************************************************/
+// write a function that takes ana array and a callback 
+// create a new array to push to 
+// loop and call the callback on every element of the array 
+// create a variable that is equal each element in isolation 
+// inside the loop check to see if calling the callback on the element returns true 
+// and if so push that element passed into the callback, to my new array. 
+//return my results array 
+
+
 
 function pickyMyMap(arr, cb) {
-	// Your code here
+	const resultArray = []
+	for(let i = 0 ; i < arr.length; i++){
+		let myElement = arr[i]
+		if(cb(myElement)){
+			resultArray.push(cb(myElement))
+		}
+	}
+	return resultArray
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
