@@ -18,10 +18,10 @@ divideByFive(50); // returns 10
 
 ***********************************************************************/
 
-const dynamicDivide = (divisor) => {
-  return (number) => {
-    return number / divisor
-  }
+function dynamicDivide(divisor) {
+  return function (dividend) {
+    return dividend / divisor;
+  };
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/

@@ -24,17 +24,31 @@ console.log(table2(75)); // STILL prints 6
 
 ***********************************************************************/
 const recVolume = height => {
-  let num1 = height
-    return (width) => {
-    let num2 = width
-    let num3
-    if (num2){
-      num3 = width
+  let num1 = height;
+  let num2;
+  let num3;
+  let result;
+  let inner = (number) => {
+    if(num2 === undefined && number !== undefined){
+      num2 = number
+      return inner
     }
-
+    if(num1 !== undefined && num2 !== undefined && result === undefined){
+      num3 = number
+      result = num1 * num2 * num3
+      return result
     }
-
+    if(result !== undefined){
+      return result
+    }
+  }
+  return inner
 }
+
+let table1 = recVolume(5); // returns a function
+table1(4); // returns a function
+console.log(table1(3)); // prints 60
+console.log(table1(145)); // STILL prints 60
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
 try {
