@@ -10,9 +10,10 @@ sentenceMaker('Hello', 'World'); // 'Hello World!'
 sentenceMaker('I', 'love', 'coding'); // 'I love coding!'
 sentenceMaker('The', 'quick', 'brown', 'fox', 'jumps', 'over', 'the', 'lazy', 'dog'); // 'The quick brown fox jumps over the lazy dog!'
 ***********************************************************************/
-
-// Your code here
-
+// create a function that uses the rest operator to take in an number of args
+// we know we will have an array of the strings that are passed into our function 
+// return a call.join(' ') with a space separator 
+let sentenceMaker = (...words) => words.join(" ") + "!";
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {
 	module.exports = sentenceMaker;
