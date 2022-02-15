@@ -15,13 +15,22 @@ Least common flavor:
 */
 
 function leastCommonFlavor(candyBag) {
-
+  let least = Infinity;
+  let lowKey = "";
+  if (!Object.keys(candyBag).length) return null;
+  for (let key in candyBag) {
+    if (candyBag[key] < least) {
+      least = candyBag[key];
+      lowKey = key;
+    }
+  }
+  return lowKey;
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
 try {
-    module.exports = leastCommonFlavor;
+  module.exports = leastCommonFlavor;
 } catch (e) {
-    module.exports = null;
+  module.exports = null;
 }
